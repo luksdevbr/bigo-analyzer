@@ -8,6 +8,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --header-w: 43.5px;
+  --p-around: .25rem;
+  --border-color: #ffffff25;
+  --editor-h: calc(100vh - var(--header-w) - var(--p-around));
+  --menu-item-bg: #ffffff1c;
+  --bg-color: #0a0a0a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,3 +28,15 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.box-analyzer h1 {
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: 700;  
+}
+
+.box-analyzer ul {
+  margin-left: 13px;
+}
+
+
