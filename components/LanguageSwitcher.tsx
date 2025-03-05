@@ -49,9 +49,9 @@ export function LanguageSwitcher() {
             </li>
             <li
               className={`flex gap-2 items-center cursor-pointer rounded-md px-2 py-1 hover:bg-(--menu-item-bg) 
-              ${ language  === "pt" ? "bg-(--menu-item-bg)" : ""
+              ${ language  === "pt-BR" ? "bg-(--menu-item-bg)" : ""
             }`}
-              onClick={() => setLanguage("pt")}
+              onClick={() => setLanguage("pt-BR")}
             >
               <Image src={brazilFlag} width={30} alt="Brazil flag"/> Portuguese
             </li>

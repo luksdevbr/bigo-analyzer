@@ -7,7 +7,7 @@ type ComplexityResponse = {
 
 type RequestBody = {
   code: string;
-  language: "en" | "pt";
+  language: "en" | "pt-BR";
 };
 
 export async function POST(req: Request): Promise<NextResponse<ComplexityResponse>> {
@@ -27,8 +27,8 @@ export async function POST(req: Request): Promise<NextResponse<ComplexityRespons
 
   const model: GenerativeModel = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
-  const prompt = language == "pt" ? ` 
-  Analise a complexidade assintótica deste código em notação Big-O. Forneça uma breve descrição do que o código faz, seguida pela análise de Complexidade de Tempo (pior caso, melhor caso e caso médio), Complexidade de Espaço e Estruturas de Dados Utilizadas. Escreva usando sintaxe markdown para headers, listas, código, etc. Use este formato exato:
+  const prompt = language == "pt-BR" ? ` 
+    Somente se a entrada for um código analise a complexidade assintótica deste código em notação Big-O. Forneça uma breve descrição do que o código faz, seguida pela análise de Complexidade de Tempo (pior caso, melhor caso e caso médio), Complexidade de Espaço e Estruturas de Dados Utilizadas. Escreva usando sintaxe markdown para headers, listas, código, etc. Use este formato exato:
 
     "Este código [descrição breve e objetiva do que o código faz].
 
@@ -42,7 +42,7 @@ export async function POST(req: Request): Promise<NextResponse<ComplexityRespons
 
     Código: ${code}   
   ` : `
-    Analyze the asymptotic complexity of this code in Big-O notation. Provide a brief description of what the code does, followed by the Time Complexity analysis (worst case, best case, and average case), Space Complexity, and Data Structures Used. Write in English using markdown syntax for headers, lists, code, etc. Use this exact format:
+    Only if the input is a code analyze the asymptotic complexity of this code in Big-O notation. Provide a brief description of what the code does, followed by the Time Complexity analysis (worst case, best case, and average case), Space Complexity, and Data Structures Used. Write in English using markdown syntax for headers, lists, code, etc. Use this exact format:
 
     "This code [brief and objective description of what the code does].
 

@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
-type Language = "en" | "pt";
+type Language = "en" | "pt-BR";
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
@@ -22,6 +22,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     localStorage.setItem("language", language);
+    document.documentElement.lang = language;
   }, [language]);
 
   return (

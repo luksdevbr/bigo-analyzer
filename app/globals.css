@@ -6,21 +6,14 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
   --header-w: 43.5px;
   --p-around: .25rem;
   --border-color: #ffffff25;
   --editor-h: calc(100vh - var(--header-w) - var(--p-around));
   --menu-item-bg: #ffffff1c;
   --bg-color: #0a0a0a;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
